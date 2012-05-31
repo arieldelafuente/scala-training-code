@@ -1,15 +1,10 @@
 package scalaexamples.higherorderfunctions
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
 // Comment in the tests below and make them run and pass
 
-@RunWith(classOf[JUnit4])
-class PersonFilterTest extends EmptyTest {
+class PersonFilterTest extends FunSuite {
   
   val personFilter = new PersonFilter
   
@@ -19,35 +14,30 @@ class PersonFilterTest extends EmptyTest {
 
   val persons = alf :: fredrik :: johannes :: Nil
   
-  // @Test 
-  def testAll {
+  test ("testAll") {
     // Pass in a function that returns all persons (always true)
-    // assertEquals(persons, personFilter.filterPersons(persons, error("")))
+    // assert(persons == personFilter.filterPersons(persons, error("")))
   }
   
-  // @Test 
-  def testNone {
+  test ("testNone") {
     // Pass in a function that returns no persons (always false)
-    // assertEquals(Nil, personFilter.filterPersons(persons, error("")))
+    // assert(Nil == personFilter.filterPersons(persons, error("")))
   }
   
-  // @Test 
-  def testEmptyList {
+  test ("testEmptyList") {
     // Use the two functions from above to test personFilter on empty lists (Nil)
-    // assertEquals(Nil, personFilter.filterPersons(Nil, error("")))
-    // assertEquals(Nil, personFilter.filterPersons(Nil, error("")))
+    // assert(Nil == personFilter.filterPersons(Nil, error("")))
+    // assert(Nil == personFilter.filterPersons(Nil, error("")))
   }
 
-  // @Test 
-  def testOld {
+  test ("testOld") {
     // Pass in a function that returns the persons over 18
-    // assertEquals(List(alf, fredrik), personFilter.filterPersons(persons, error("")))
+    // assert(List(alf, fredrik) == personFilter.filterPersons(persons, error("")))
   }
 
-  // @Test
-  def testYoung {
+  test ("testYoung") {
     // Pass in a function that returns the persons under 18
-    // assertEquals(List(johannes), personFilter.filterPersons(persons, error("")))
+    // assert(List(johannes) == personFilter.filterPersons(persons, error("")))
   }
 
 }

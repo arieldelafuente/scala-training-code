@@ -1,15 +1,10 @@
 package scalaexamples.higherorderfunctions
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
 // Comment in the tests below and make them run and pass
 
-@RunWith(classOf[JUnit4])
-class PersonTransformerTest extends EmptyTest {
+class PersonTransformerTest extends FunSuite {
 
   val personTransformer = new PersonTransformer
 
@@ -19,25 +14,22 @@ class PersonTransformerTest extends EmptyTest {
 
   val persons = alf :: fredrik :: johannes:: Nil
 
-  // @Test 
-  def testEquals {
+  test ("testEquals") {
     // Pass in a function that returns the list of persons unchanged
-    // assertEquals(persons, personTransformer.transformPersons(persons, error("")))
+    // assert(persons == personTransformer.transformPersons(persons, error("")))
   }
 
-  // @Test
-  def testName {
+  test ("testName") {
     // Pass in a function transforming the list to the names of the persons
     val expected = List("Alf", "Fredrik", "Johannes")
-    // assertEquals(expected, personTransformer.transformPersons(persons, error("")))
+    // assert(expected == personTransformer.transformPersons(persons, error("")))
     ()
   }
   
-  // @Test
-  def testAge {
+  test ("testAge") {
     // Pass in a function transforming the list to the ages of the persons
     val expected = List(30, 33, 0)
-    // assertEquals(expected, personTransformer.transformPersons(persons, error("")))
+    // assert(expected == personTransformer.transformPersons(persons, error("")))
     ()
   }
   

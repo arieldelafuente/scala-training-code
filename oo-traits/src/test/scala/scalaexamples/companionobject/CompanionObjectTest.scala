@@ -1,34 +1,29 @@
 package scalaexamples.companionobject
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
-@RunWith(classOf[JUnit4])
-class CompanionObjectTest extends EmptyTest{
+class CompanionObjectTest extends FunSuite{
 
-  @Test def companionObjectTest {
+  test("companionObjectTest") {
     // Comment in expression by expression and make them compile and run
     // Hint: You do this by changing the Train.scala definition. More hints in the source file.
     
     // val trainOne = Train(Array("Espen"))
-    // assertEquals(List("Espen"), trainOne.passengers)
-    // assertTrue(trainOne.conductor.isEmpty)
+    // assert(List("Espen") == trainOne.passengers)
+    // assert(trainOne.conductor.isEmpty)
     
     // val trainTwo = Train("Per", "Pål")
-    // assertEquals(List("Per", "Pål"), trainTwo.passengers)
-    // assertTrue(trainTwo.conductor.isEmpty)
+    // assert(List("Per", "Pål") == trainTwo.passengers)
+    // assert(trainTwo.conductor.isEmpty)
     
     // val trainObject = Train
     // val trainThree = trainObject(Array("Espen"))
-    // assertEquals(List("Espen"), trainThree.passengers)
-    // assertTrue(trainThree.conductor.isEmpty)
+    // assert(List("Espen") == trainThree.passengers)
+    // assert(trainThree.conductor.isEmpty)
 
     // val trainFour = trainObject.apply(Some("conductor"), "Espen")
-    // assertEquals(List("Espen"), trainFour.passengers)
-    // assertTrue(trainFour.conductor.isDefined)
+    // assert(List("Espen") == trainFour.passengers)
+    // assert(trainFour.conductor.isDefined)
 
   }
   

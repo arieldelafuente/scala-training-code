@@ -1,16 +1,10 @@
 package scalaexamples.patternmatching
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
-@RunWith(classOf[JUnit4])
-class TupleTestMatchTest extends EmptyTest {
-  
-  // @Test
-  def matchOnTupes {
+class TupleTestMatchTest extends FunSuite {
+
+  test("matchOnTupes") {
     val simpleTuple: Any = (1, "string")
 
     simpleTuple match {
@@ -18,23 +12,21 @@ class TupleTestMatchTest extends EmptyTest {
       case _ => sys.error("Couldnt match it")
     }
   }
-  
-  // @Test
-  def matchOnTupesWithGuard {
+
+  test("matchOnTupesWithGuard") {
     val simpleTuple: Any = (1, "string")
 
     simpleTuple match {
-      case (one, _) => assertEquals(2, one)
+      case (one, _) => assert(one == 2)
       // Comment in this line and make this run, (hint create guard on the previous match, so that it won't hit)
       // case (one, _) => assertEquals(1, one)
       case _ => sys.error("Couldnt match it")
     }
   }
 
-  // @Test
-  def matchOnLargerTuple{
+  test("matchOnLargerTuple") {
     val simpleTuple: Any = (1, "string", false)
-    
+
     simpleTuple match {
       // Match on the tuple, and assert with assertFalse(three)
       case (one, two, three: String) => sys.error("this is not a Tuple3 with last element Boolean")

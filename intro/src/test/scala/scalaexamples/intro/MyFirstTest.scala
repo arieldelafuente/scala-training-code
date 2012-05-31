@@ -1,13 +1,8 @@
 package scalaexamples.intro
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
-@RunWith(classOf[JUnit4])
-class MyFirstTest extends EmptyTest{
+class MyFirstTest extends FunSuite {
   
   // Define a test. Make it fail, and then make it pass
 

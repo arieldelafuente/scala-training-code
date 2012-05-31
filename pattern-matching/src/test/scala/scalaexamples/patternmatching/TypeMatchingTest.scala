@@ -1,16 +1,10 @@
 package scalaexamples.patternmatching
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
-@RunWith(classOf[JUnit4])
-class TypeMatchingTest extends EmptyTest {
+class TypeMatchingTest extends FunSuite {
   
-  // @Test 
-  def matchOnType {
+  test("matchOnType") {
 	val elements = List(23, "Hello", 8.5, 'q') 
 	for (element <- elements) { 
 	  element match { 

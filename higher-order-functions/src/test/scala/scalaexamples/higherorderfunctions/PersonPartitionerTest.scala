@@ -1,15 +1,10 @@
 package scalaexamples.higherorderfunctions
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
 // Comment in the tests below and make them run and pass
 
-@RunWith(classOf[JUnit4])
-class PersonPartitionerTest extends EmptyTest {
+class PersonPartitionerTest extends FunSuite {
 
   val partitioner = new PersonPartitioner
 
@@ -19,23 +14,21 @@ class PersonPartitionerTest extends EmptyTest {
 
   val persons = alf :: fredrik :: johannes :: Nil
 
-  // @Test
-  def testAgeLimit {
+  test ("testAgeLimit") {
     // Pass in a function that tests whether the person is an adult
     val (adults, kids) = (Nil, Nil) // partitioner.partitionPersons(persons, error(""))
 
-    assertEquals(List(alf, fredrik), adults)
-    assertEquals(List(johannes), kids)
+    assert(List(alf, fredrik) == adults)
+    assert(List(johannes) == kids)
   }
 
-  // @Test
-  def testHasMoreThanOneEmail {
+  test ("testHasMoreThanOneEmail") {
     // Pass in a function that tests whether the person is
     // a techie (2 or more e-mail addresses) or a luddite (zero or one e-mail address)
     val (techies, luddites) = (Nil, Nil) // partitioner.partitionPersons(persons, error(""))
 
-    assertEquals(List(fredrik), techies)
-    assertEquals(List(alf, johannes), luddites)
+    assert(List(fredrik) == techies)
+    assert(List(alf, johannes) == luddites)
   }
 
 }

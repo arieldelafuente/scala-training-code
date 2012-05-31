@@ -1,61 +1,49 @@
 package scalaexamples.intro
 
-import junit.framework.Assert._
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import scalaexamples.EmptyTest
+import org.scalatest.FunSuite
 
-@RunWith(classOf[JUnit4])
-class CreateStuffTest extends EmptyTest {
+class CreateStuffTest extends FunSuite {
 
   val stuff = new Stuff
   
-  // @Test
-  def accessOverridenToString {
-    assertEquals("Stuff", stuff.toString)
+  test ("accessOverridenToString") {
+    assert(stuff.toString == "Stuff")
   }
   
-  // @Test
-  def accessVal {
+  test ("accessVal") {
+    (pending)
     // Make this compile and run
-    
   	// assertEquals("This is a constant", stuff.const)
    
     // When commenting in the following line, you must get a compile error
-  	// stuff.const = "Must give compile error"
+  	// stuff.const = "Must give compile error"  
   }
   
-  // @Test
-  def changeVar {
+  test ("changeVar") {
+    (pending)
     // Make this compile and run 
     
     // assertEquals("This is a variable", stuff.variable)
     val text = "Changed it"
     // stuff.variable = text
     // assertEquals(text, stuff.variable)
-    ()
   }
   
-  // @Test
-  def accessStuffObject {
+  test ("accessStuffObject") {
+    (pending)
     // Make this compile and run
-    
-    //assertEquals("StuffObject", Stuff.getString)
+    //assertEquals("StuffObject", Stuff.getString)    
   }
   
-  // @Test
-  def testSayHello {
+  test ("testSayHello") {
+    (pending)
     // Make this compile and run
-    
-    // assertEquals("Hello Alf", stuff.sayHello("Alf"))
+    // assertEquals("Hello Alf", stuff.sayHello("Alf"))    
   }
-
-  // @Test
-  def testPrintHello {
+  
+  test ("testPrintHello") {
     // Make this compile and run
-    
-    // assertEquals((), stuff.printHello("Alf"))
+    // assertEquals((), stuff.printHello("Alf"))    
   }
   
 }
